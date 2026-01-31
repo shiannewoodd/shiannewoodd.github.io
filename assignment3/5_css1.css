@@ -1,0 +1,104 @@
+/* PAGE */
+/* PAGE TEXT (paragraphs/table/list) stays serif like the screenshot */
+body{
+	background-color: lightblue;
+	font-family: Georgia, "Times New Roman", serif;
+	margin: 0;
+	padding: 18px 28px;
+}
+
+/* TITLE + MAIN SUBHEADERS are bold sans-serif in the screenshot */
+h1{
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 72px;
+	font-weight: 800;
+	margin: 10px 0 20px 0;
+}
+
+h2{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	font-weight: 800;
+	margin: 30px 0 10px 0;
+}
+
+/* "Common HTML Tags" looks serif in your image */
+h3{
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 22px;
+	font-weight: 800;
+	margin: 18px 0 10px 0;
+}
+
+
+/* PARAGRAPHS */
+p{
+	font-size: 16px;
+	line-height: 1.35;
+	margin: 14px 0;
+}
+
+/* GREEN BOX PARAGRAPH (2nd paragraph) */
+#paragraph2{
+	background-color: white;
+	border: 4px solid green;
+	width: 55%;
+	margin: 20px 0 20px 0;
+	padding: 26px 52px;
+	line-height: 2.0;
+}
+
+/* NAVY PARAGRAPHS (4th & 5th paragraphs) */
+.blue{
+	background-color: navy;
+	color: white;
+	border: 2px solid black;
+	padding: 14px 14px;
+	margin: 22px 0;
+}
+
+/* LINKS */
+a{
+	color: #0000EE;         /* default link blue */
+}
+
+/* list links are blue */
+ol a{
+	color: #0000EE;
+}
+
+/* w3schools link is red and distinct */
+section p a{
+	color: darkred;
+}
+
+/* ORDERED LIST: two digits */
+ol{
+	list-style-type: decimal-leading-zero;
+	padding-left: 40px;
+	margin-top: 10px;
+}
+
+/* TABLE */
+table{
+	border-collapse: collapse; /* overlapping borders */
+	width: 58%;
+	margin-top: 10px;
+}
+
+th, td{
+	border: 1px solid black;
+	padding: 6px 8px;
+	font-size: 14px;
+	vertical-align: top;
+}
+
+th{
+	background-color: #d9d9d9;
+	font-weight: 700;
+}
+
+td{
+	background-color: #ffffff;
+}
