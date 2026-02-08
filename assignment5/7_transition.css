@@ -1,214 +1,161 @@
-/* transitions_and_selectors.css */
-
 html, body{
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #000;
-}
-
-/* left nav */
-#menuItems{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 260px;
-  height: 100vh;
-  background: #000;
-  z-index: 20;
-}
-
-#menuItems button{
-  width: 100%;
-  display: block;
-  padding: 18px 10px;
-  font-size: 22px;
-  color: #fff;
-  background: #0019ff;
-  border: 1px solid #1f1f1f;
-  cursor: pointer;
-}
-
-#menuItems button:hover{
-  background: #0a0a8f;
-}
-
-/* jump menu hidden until hover recent articles */
-#jumpMenu{
-  list-style: none;
-  margin: 0;
-  padding: 10px 0;
-  background: #c99812;
-  display: none;
-}
-
-/* supports either adjacent sibling or general sibling layouts */
-#recentArticles:hover + #jumpMenu,
-#recentArticles:hover ~ #jumpMenu,
-#jumpMenu:hover{
-  display: block;
-}
-
-#jumpMenu li{
-  margin: 0;
-  padding: 0;
-}
-
-#jumpMenu a{
-  display: block;
-  padding: 4px 16px;
-  text-decoration: none;
-  color: #0019ff;
-  font-size: 22px;
-}
-
-#jumpMenu a:hover{
-  background: #0019ff;
-  color: #ffd84a;
-}
-
-/* main area */
-main{
-  margin-left: 260px;
-  min-height: 100vh;
-  background: #fff;
-}
-
-/* header fixed and centered without counting nav width */
-header{
-  position: fixed;
-  top: 0;
-  left: 260px;
-  width: calc(100% - 260px);
-  height: 110px;
-  background: #ff0000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
-
-header p{
-  margin: 0;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 44px;
-  color: #000;
-}
-
-/* page title under header */
-h1{
-  margin: 0;
-  padding-top: 145px;
-  text-align: center;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 52px;
-  color: #000;
-}
-
-/* articles grid */
-#container{
-  padding: 30px 30px 140px 30px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  justify-content: center;
-}
-
-/* article base state */
-article{
-  flex: 0 0 calc(25% - 24px);
-  min-width: 210px;
-  max-width: 320px;
-
-  background: transparent;
-  color: #bfbfbf;
-
-  overflow: hidden;
-  max-height: 360px;
-
-  transition: color 2s, max-height 2s, transform 2s;
-}
-
-article h2{
-  margin: 0 0 10px 0;
-  font-size: 26px;
-  font-weight: 700;
-  color: #b0b0b0;
-  transition: color 2s;
-}
-
-/* hover makes darker and expands over 2s */
-article:hover{
-  color: #3b3b3b;
-  max-height: 900px;
-  transform: scale(1.05);
-}
-
-article:hover h2{
-  color: #111;
-}
-
-/* drop cap only for the first paragraph of main text */
-article > p:first-of-type::first-letter{
-  font-family: "Times New Roman", Times, serif;
-  font-size: 36px;
-  line-height: 1;
-  float: left;
-  margin-right: 6px;
-  margin-top: 2px;
-  color: inherit;
-}
-
-/* links */
-a{
-  color: #0019ff;
-}
-
-/* arrow image for google links */
-a[href*="google"]::after{
-  content: "";
-  display: inline-block;
-  width: 22px;
-  height: 22px;
-  margin-left: 8px;
-  vertical-align: middle;
-  background-image: url("arrowarrow.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-/* thank you fixed bottom right */
-#thanks{
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  background: #8fd0ff;
-  border: 2px solid #000;
-  padding: 14px 22px;
-  z-index: 30;
-}
-
-#thanks a{
-  font-family: "Times New Roman", Times, serif;
-  font-size: 40px;
-  color: #0019ff;
-}
-
-/* responsive fallback if screen is smaller */
-@media (max-width: 1250px){
-  article{ flex: 0 0 calc(33.333% - 24px); }
-}
-@media (max-width: 980px){
-  article{ flex: 0 0 calc(50% - 24px); }
-}
-@media (max-width: 720px){
-  main{ margin-left: 0; }
-  header{ left: 0; width: 100%; }
-  #menuItems{
-    position: static;
-    width: 100%;
-    height: auto;
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#000;
   }
-  article{ flex: 0 0 100%; max-width: 520px; }
-}
+  
+  #menuItems{
+    position:fixed;
+    left:0;
+    top:0;
+    width:260px;
+    height:100vh;
+    background:#000;
+  }
+  
+  #menuItems button{
+    width:100%;
+    padding:18px 10px;
+    font-size:22px;
+    color:#fff;
+    background:#0019ff;
+    border:1px solid #1f1f1f;
+    cursor:pointer;
+  }
+  
+  #menuItems button:hover{
+    background:#0a0a8f;
+  }
+  
+  #jumpMenu{
+    list-style:none;
+    margin:0;
+    padding:10px 0;
+    background:#c99812;
+    display:none;
+  }
+  
+  #recentArticles:hover + #jumpMenu,
+  #recentArticles:hover ~ #jumpMenu,
+  #jumpMenu:hover{
+    display:block;
+  }
+  
+  #jumpMenu a{
+    display:block;
+    padding:4px 16px;
+    font-size:22px;
+    color:#0019ff;
+    text-decoration:none;
+  }
+  
+  #jumpMenu a:hover{
+    background:#0019ff;
+    color:#ffd84a;
+  }
+  
+  main{
+    margin-left:260px;
+    min-height:100vh;
+    background:#fff;
+    position:relative;
+  }
+  
+  header{
+    position:fixed;
+    top:0;
+    left:260px;
+    width:calc(100% - 260px);
+    height:110px;
+    background:#ff0000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  
+  header p{
+    margin:0;
+    font-family:"Times New Roman", Times, serif;
+    font-size:44px;
+  }
+  
+  h1{
+    margin:0;
+    padding-top:145px;
+    text-align:center;
+    font-family:"Times New Roman", Times, serif;
+    font-size:52px;
+  }
+  
+  #container{
+    padding:40px 40px 200px 40px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:28px;
+    justify-content:center;
+  }
+  
+  article{
+    flex:0 0 calc(25% - 28px);
+    min-width:240px;
+    max-width:360px;
+    color:#bfbfbf;
+    max-height:560px;
+    overflow:hidden;
+    transition:color 2s, max-height 2s;
+  }
+  
+  article:hover{
+    color:#3b3b3b;
+    max-height:1200px;
+  }
+  
+  article h2{
+    margin:0 0 10px 0;
+    font-size:26px;
+    color:#b0b0b0;
+  }
+  
+  article:hover h2{
+    color:#111;
+  }
+  
+  article > p:first-of-type::first-letter{
+    font-family:"Times New Roman", Times, serif;
+    font-size:36px;
+    float:left;
+    margin-right:6px;
+    margin-top:2px;
+  }
+  
+  a{
+    color:#0019ff;
+  }
+  
+  a[href*="google"]::after{
+    content:"";
+    display:inline-block;
+    width:22px;
+    height:22px;
+    margin-left:8px;
+    background:url("arrow.png") no-repeat;
+    background-size:contain;
+  }
+  
+  #thanks{
+    position:absolute;
+    right:30px;
+    bottom:30px;
+    background:#8fd0ff;
+    border:2px solid #000;
+    padding:14px 22px;
+  }
+  
+  #thanks a{
+    font-family:"Times New Roman", Times, serif;
+    font-size:40px;
+    color:#0019ff;
+  }
+  
